@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vuit.teamwork" >
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="vuit.teamwork.ui.MainActivity"
+            android:label="@string/profile" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="vuit.teamwork.ui.ContactsActivity"
+            android:label="@string/contacts" >
+        </activity>
+        <activity
+            android:name="vuit.teamwork.ui.Projects"
+            android:label="@string/projects_to_see" >
+        </activity>
+        <activity
+            android:name="vuit.teamwork.ui.MessageActivity"
+            android:label="MessageActivity" >
+        </activity>
+        <activity
+            android:name=".ui.ProjectInfoActivity"
+            android:label="@string/project" >
+        </activity>
+        <activity
+            android:name="vuit.teamwork.ui.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="vuit.teamwork.ui.RegisterActivity"
+            android:label="@string/register" >
+        </activity>
+        <activity android:name=".ui.MessageList"
+            android:label="@string/messages" >
+        </activity>
+        <activity android:name=".ui.ContactInfoActivity"
+            android:label="@string/contact_information">
+        </activity>
+    </application>
+
+</manifest>
