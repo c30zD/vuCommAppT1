@@ -20,7 +20,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.0'
     compile 'com.google.android.gms:play-services:4.2.42'
+    compile files('/home/prdxs/AndroidStudioProjects/vuCommAppT1/libs/asmack-android-8-4.0.5.jar')
+    compile files('/home/prdxs/AndroidStudioProjects/vuCommAppT1/libs/dnsjava-2.1.6.jar')
+    compile files('/home/prdxs/AndroidStudioProjects/vuCommAppT1/libs/org.xbill.dns_2.1.6.jar')
 }
