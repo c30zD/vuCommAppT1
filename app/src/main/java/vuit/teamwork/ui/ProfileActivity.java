@@ -16,11 +16,11 @@ import android.widget.TextView;
 import vuit.teamwork.R;
 
 /**
- * Activitat que mostra la informaci&oacute; d'un contacte.
+ * Activitat que mostra el perfil de l'usuari.
  *
  * @author c30zD
  */
-public class ContactInfoActivity extends ActionBarActivity {
+public class ProfileActivity extends ActionBarActivity {
 
     private static final String[] DUMMY_LIST_ENTRIES1 = {"Hello", "Anything", "Chao"};
     private static final String[] DUMMY_LIST_ENTRIES2 = {"Fortuna", "Imperatrix", "Mundi"};
@@ -44,7 +44,7 @@ public class ContactInfoActivity extends ActionBarActivity {
         btnViewAllMessages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ContactInfoActivity.this, MessageList.class);
+                Intent i = new Intent(ProfileActivity.this, MessageList.class);
                 startActivity(i);
             }
         });
@@ -52,7 +52,7 @@ public class ContactInfoActivity extends ActionBarActivity {
         btnViewAllProjects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ContactInfoActivity.this, Projects.class);
+                Intent i = new Intent(ProfileActivity.this, Projects.class);
                 startActivity(i);
             }
         });
@@ -63,7 +63,7 @@ public class ContactInfoActivity extends ActionBarActivity {
                 Intent i;
                 // TODO Determinar el mensaje que ha sido seleccionado (id)
                 // TODO Implementar la funcionalidad para cargar un mensaje en MessageActivity
-                i = new Intent(ContactInfoActivity.this, MessageActivity.class);
+                i = new Intent(ProfileActivity.this, MessageActivity.class);
                 i.putExtra(MessageActivity.MESSAGE_BOARD, "room@server.com");
                 startActivity(i);
             }
@@ -75,7 +75,7 @@ public class ContactInfoActivity extends ActionBarActivity {
                 Intent i;
                 // TODO Determinar el mensaje que ha sido seleccionado (id)
                 // TODO Implementar la funcionalidad para cargar un proyecto en ProjectInfoActivity
-                i = new Intent(ContactInfoActivity.this, ProjectInfoActivity.class);
+                i = new Intent(ProfileActivity.this, ProjectInfoActivity.class);
                 startActivity(i);
             }
         });
@@ -85,7 +85,7 @@ public class ContactInfoActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_contact_info, menu);
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
         return true;
     }
 

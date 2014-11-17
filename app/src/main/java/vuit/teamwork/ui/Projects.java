@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import vuit.teamwork.R;
+import vuit.teamwork.utils.ProjectListBinder;
 
 /**
  * Activitat que mostra tots els projectes.
@@ -22,9 +22,6 @@ import vuit.teamwork.R;
  */
 public class Projects extends ActionBarActivity {
 
-    private static final String[] DUMMY_LIST_ENTRIES1 = {"Hello", "Anything", "Chao",
-            "Fortuna", "Imperatrix", "Mundi", "Homer", "Marge", "Bart", "Lisa", "Maggie"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +29,9 @@ public class Projects extends ActionBarActivity {
         ListView lstProjects = (ListView) findViewById(R.id.lstMultiuse);
         EditText txtSearch = (EditText) findViewById(R.id.txtSearch);
 
-        // TODO Obtener proyectos de este usuario
-        lstProjects.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-                DUMMY_LIST_ENTRIES1));
+        // TODO Give data collection to ProjectListBinder
+        ProjectListBinder listBinder = new ProjectListBinder(this);
+        lstProjects.setAdapter(listBinder);
 
         txtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -49,6 +46,11 @@ public class Projects extends ActionBarActivity {
                 Intent i;
                 // TODO Determinar proyecto y pasarlo a ProjectInfoActivity para que obtenga sus datos
                 i = new Intent(Projects.this, ProjectInfoActivity.class);
+                /* TODO send data to the intent to display on ProjectInfoActivity
+                i.putExtra("PROJECT_NAME", projName);
+                i.putExtra("PROJECT_DESCRIPTION", projectDescriptionReference); // Reference to fetch from DB
+                i.putExtra("PROJECT_ID", projectId);        // Perhaps the only thing I need for the DB
+                */
                 startActivity(i);
             }
         });

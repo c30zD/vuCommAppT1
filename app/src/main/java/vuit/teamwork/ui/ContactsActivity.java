@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import vuit.teamwork.R;
+import vuit.teamwork.utils.ContactListBinder;
 
 /**
  * Activitat que mostra tots els contactes.
@@ -21,8 +21,6 @@ import vuit.teamwork.R;
  * @author c30zD
  */
 public class ContactsActivity extends ActionBarActivity {
-
-    private static final String[] DUMMY_LIST_ENTRIES3 = {"Homer", "Marge", "Bart", "Lisa", "Maggie"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +30,14 @@ public class ContactsActivity extends ActionBarActivity {
         EditText txtSearch = (EditText) findViewById(R.id.txtSearch);
 
         // TODO Obtener los contactos de la empresa
-        lstContacts.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-                DUMMY_LIST_ENTRIES3));
+        /*
+        Contact Name
+        photo
+        Description
+        No. Common Projects
+         */
+        ContactListBinder listBinder = new ContactListBinder(this);
+        lstContacts.setAdapter(listBinder);
 
         txtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override

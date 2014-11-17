@@ -7,11 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import vuit.teamwork.R;
+import vuit.teamwork.utils.MessageListBinder;
 
 /**
  * Activitat que mostra tots els missatges.
@@ -19,9 +19,6 @@ import vuit.teamwork.R;
  * @author c30zD
  */
 public class MessageList extends ActionBarActivity {
-
-    private static final String[] DUMMY_LIST_ENTRIES1 = {"Hello", "Anything", "Chao",
-            "Fortuna", "Imperatrix", "Mundi", "Homer", "Marge", "Bart", "Lisa", "Maggie"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +28,8 @@ public class MessageList extends ActionBarActivity {
         EditText searchTextBox = (EditText) findViewById(R.id.txtSearch);
 
         // TODO Obtener todos los mensajes
-        lstMessages.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-                DUMMY_LIST_ENTRIES1));
+        MessageListBinder binder = new MessageListBinder(this);
+        lstMessages.setAdapter(binder);
 
         lstMessages.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -40,6 +37,7 @@ public class MessageList extends ActionBarActivity {
                 // TODO Determinar el mensaje seleccionado para mostrarlo en la siguiente actividad
                 Intent intent;
                 intent = new Intent(MessageList.this, MessageActivity.class);
+                intent.putExtra(MessageActivity.MESSAGE_BOARD, "room@server.com");
                 startActivity(intent);
             }
         });

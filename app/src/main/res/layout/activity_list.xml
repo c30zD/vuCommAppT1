@@ -28,6 +28,9 @@
         android:id="@+id/lstMultiuse"
         android:layout_below="@+id/lblSearch"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:listSelector="@drawable/list_selector"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"/>
 
 </RelativeLayout>
