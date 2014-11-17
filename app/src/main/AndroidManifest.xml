@@ -12,14 +12,19 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name="vuit.teamwork.ui.MainActivity"
-            android:label="@string/profile" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="vuit.teamwork.ui.ProfileActivity"
+            android:label="@string/profile" >
         </activity>
         <activity
             android:name="vuit.teamwork.ui.ContactsActivity"
@@ -34,7 +39,7 @@
             android:label="MessageActivity" >
         </activity>
         <activity
-            android:name=".ui.ProjectInfoActivity"
+            android:name="vuit.teamwork.ui.ProjectInfoActivity"
             android:label="@string/project" >
         </activity>
         <activity
@@ -46,11 +51,24 @@
             android:name="vuit.teamwork.ui.RegisterActivity"
             android:label="@string/register" >
         </activity>
-        <activity android:name=".ui.MessageList"
+        <activity
+            android:name="vuit.teamwork.ui.MessageList"
             android:label="@string/messages" >
         </activity>
-        <activity android:name=".ui.ContactInfoActivity"
-            android:label="@string/contact_information">
+        <activity
+            android:name="vuit.teamwork.ui.ContactInfoActivity"
+            android:label="@string/contact_information" >
+        </activity>
+
+        <service
+            android:name="vuit.teamwork.messaging.MessengerService"
+            android:enabled="false"
+            android:exported="false" >
+        </service>
+
+        <activity
+            android:name="vuit.teamwork.ui.MainActivity"
+            android:label="@string/title_activity_main" >
         </activity>
     </application>
 
